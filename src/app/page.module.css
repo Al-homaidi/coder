@@ -55,4 +55,9 @@
     font-size: 48px;
   }
 
+  .img {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
 }

@@ -76,11 +76,6 @@ const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-            {session.status === "authenticated" && (
-              <button className={styles.logout} onClick={() => { signOut(); closeSidebar(); }}>
-                Logout
-              </button>
-            )}
           </div>
         </div>
       )}
