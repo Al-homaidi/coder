@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useState, useContext } from "react";
 import styles from "./navbar.module.css";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
-import { signOut, useSession } from "next-auth/react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { ThemeContext } from "@/context/ThemeContext";
 const links = [
@@ -41,7 +40,6 @@ const links = [
 ];
 
 const Navbar = () => {
-  const session = useSession();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { mode } = useContext(ThemeContext);
 
@@ -60,11 +58,6 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        {session.status === "authenticated" && (
-          <button className={styles.logout} onClick={signOut}>
-            Logout
-          </button>
-        )}
       </div>
       {/* Hamburger Icon for mobile */}
       <button className={styles.menuIcon} onClick={handleSidebar} aria-label="Open menu">

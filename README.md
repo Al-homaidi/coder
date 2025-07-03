@@ -1,103 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# 🛠️ Full-Stack Next.js Project
+## Getting Started
 
-## 📌 Project Overview
-
-This is a full-stack web application built with **Next.js**, a powerful React-based framework that enables seamless development of both frontend and backend features in a single codebase.
-
-The project supports:
-- **Server-Side Rendering (SSR)**
-- **Static Site Generation (SSG)**
-- **API Routes**
-- **Scalable folder structure**
-- **.env environment configuration**
-
----
-
-## ▶️ Getting Started
-
-### 1. Prerequisites
-
-Make sure you have the following installed:
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- npm or yarn
-
-Then install the dependencies:
-
-```bash
-npm install
-# or
-yarn
-```
-
----
-
-### 2. Environment Variables
-
-Create a `.env.local` file in the root directory and add the necessary environment variables.
-
-Example:
-
-```env
-MONGO=mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>?retryWrites=true&w=majority
-```
-
-> ⚠️ Replace with your actual MongoDB connection string.
-
----
-
-### 3. Run the Development Server
-
-Start the app in development mode:
+First, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🧰 Technologies Used
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Next.js** – React framework with SSR, SSG, and API support
-- **React** – For building user interfaces
-- **Tailwind CSS** – Utility-first CSS framework for styling
-- **MongoDB + Mongoose** – NoSQL database and ODM for data modeling
-- **Lucide-react** – Icon library for modern UIs
-- **dotenv** – For loading environment variables from `.env.local`
-- **next/image** – Optimized image rendering with built-in lazy loading
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## 📝 Notes
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- This project is **full-stack**, meaning both frontend and backend logic are included within the same app.
-- API endpoints can be found under the `/app/api` or `/pages/api` directory depending on the project structure.
-- You can build and run the app in production using:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-```bash
-npm run build
-npm start
-```
+## Deploy on Vercel
 
-Make sure all required environment variables are correctly configured before deployment.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
----
-
-## 📂 Example Folder Structure
-
-```
-/app
-  /[productId]        # Dynamic product page
-  /api                # Backend API routes
-  /components         # Reusable UI components
-  /utils              # Utility functions
-  /models             # Mongoose models
-/public               # Static assets
-/styles               # Global styles (Tailwind or CSS)
-.env.local            # Environment config
-next.config.js        # Next.js config
-```
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
