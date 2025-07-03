@@ -10,7 +10,7 @@ export const metadata = {
   title: "Lama Dev",
   description: "This is the description",
   icons: {
-    icon: "../../public/hero.png",
+    icon: "/hero.png",
   },
 };
 
