@@ -2,26 +2,22 @@
 
 import { createContext, useState, useEffect } from "react";
 
-export const ThemeContext = createContext({
-  mode: "dark",
-  toggle: () => { },
-});
+export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [mode, setMode] = useState(null);
+  const [mode, setMode] = useState("dark"); // Default to dark mode
 
   useEffect(() => {
-    const stored = localStorage.getItem("themeMode");
-    if (stored === "light" || stored === "dark") {
-      setMode(stored);
-    } else {
-      setMode("dark");
-      localStorage.setItem("themeMode", "dark");
+    // Only access localStorage on the client side
+    const savedMode = localStorage.getItem("themeMode");
+    if (savedMode) {
+      setMode(savedMode);
     }
   }, []);
 
   useEffect(() => {
-    if (mode) {
+    // Only set localStorage on the client side
+    if (typeof window !== "undefined") {
       localStorage.setItem("themeMode", mode);
     }
   }, [mode]);
@@ -29,8 +25,6 @@ export const ThemeProvider = ({ children }) => {
   const toggle = () => {
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
   };
-
-  if (mode === null) return null; // لا تعرض شيء إلى أن نحدد الثيم
 
   return (
     <ThemeContext.Provider value={{ toggle, mode }}>
